@@ -1,0 +1,128 @@
+html{
+    box-sizing: border-box;
+}
+body{
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: whitesmoke;
+    position:absolute;
+    width: 100%;
+    flex-direction: column;
+    
+}
+.calculator{
+    margin: 100px;
+    padding: 0;
+    background: white;
+    width: 500px; 
+    border-radius: 14px;
+    box-shadow: 0 5px 30px -5px rgba(0, 0,0, 0.6);
+}
+.calculator-display{
+    background-color: black;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    border-radius: 10px 10px 0 0;
+}
+.calculator-display h1{
+    margin: 0;
+    font-size: 45px;
+    padding: 25px;
+    font-weight: 100;
+    overflow-x: auto;
+}
+.calculator-button{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-gap: 10px;
+    padding: 10px;
+}
+.equal{
+    grid-column: -2;
+    grid-row: 2/span 4;
+}
+button{
+    min-height: 50px;
+    font-size: 20px;
+    font-weight: 100;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    outline: none;
+    background-color: rgba(199, 199,199);
+}
+button:hover{
+    filter: brightness(110%);
+}
+button:active{
+    transform: translateY(2px);
+}
+.operator ,.equal{
+    background: orange;
+    color: white;
+    font-size: 30px;
+
+}
+@media screen and (max-width:600px){
+    .calculator{
+        width: 95%;
+    }
+}
+.bg {
+    animation:slide 3s ease-in-out infinite alternate;
+    background-image: linear-gradient(-60deg, #6c3 50%, #09f 50%);
+    bottom:0;
+    left:-50%;
+    opacity:.5;
+    position:fixed;
+    right:-50%;
+    top:0;
+    z-index:-1;
+  }
+  .bg2 {
+    animation-direction:alternate-reverse;
+    animation-duration:4s;
+  }
+  
+  @keyframes slide {
+    0% {
+      transform:translateX(-25%);
+    }
+    100% {
+      transform:translateX(25%);
+    }
+  }
+  .waviy {
+    position:relative;
+    -webkit-box-reflect:  below -20px linear-gradient(transparent, rgba(0,0,0,.2));
+    font-size: 60px
+    
+}
+
+  .waviy span {
+    font-family: 'Alfa Slab One', cursive;
+    position: relative;
+    display: inline-block;
+    color: #fff;
+    text-transform: uppercase;
+    animation: waviy 1s infinite;
+    animation-delay: calc(.1s * var(--i));
+    padding: 5px;
+    margin: 20px;
+    color: rgb(226, 43, 202);
+    
+    
+  }
+  @keyframes waviy {
+    0%,40%,100% {
+      transform: translateY(0)
+    }
+    20% {
+      transform: translateY(-20px)
+    }
+  }
